@@ -1,6 +1,9 @@
 # treed
 
+[The Tree-to-tree correction problem, Kho-Chung Tai](https://dl.acm.org/doi/10.1145/322139.322143)
+
 [Simple Fast Algorithms for the Editing Distance between Trees and Related Problems, K. Zhang and D. Shasha](https://epubs.siam.org/doi/10.1137/0218082)
+
 
 
 ```python
