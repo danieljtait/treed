@@ -4,6 +4,21 @@
 
 [Simple Fast Algorithms for the Editing Distance between Trees and Related Problems, K. Zhang and D. Shasha](https://epubs.siam.org/doi/10.1137/0218082)
 
+## Specifying the cost function
+The problem specification allows for three modifications in
+order to transform one tree into another. Deleting an existing node
+in the source tree, adding a new node to the target tree, and then
+modifying a node by relabeling. 
+
+These are specified by the following arguments to `tree_distance`. Note
+that in all of the below the integer variables represent indexes into the
+trees nodes in a postorder iteration;
+* `delete_node_cost_fn: (i: int, t: Tree) -> int | float` representing the
+  cost of deleteing the `i`th node of tree `t`, (in postorder).
+* `insert_node_cost_fn: (j: int, t: Tree) -> int | float` represing the
+  cost of inserting the `j`th node into tree `t`.
+* `modify_node_cost_fn: (i: int, j: int, t1: Tree, t2: Tree) -> int | float`
+  the cost of relabelling the `i`th node of `t1` to the `j`th node of `t2`.
 
 
 ```python
