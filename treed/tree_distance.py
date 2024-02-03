@@ -83,7 +83,18 @@ def forest_distance(
     modify_node_cost_fn: Callable[[int, int, Tree, Tree], float] = lambda i, j, t1, t2: 1,
     return_mapping: bool = False
 ) -> Mapping[ForestDistKey, ForestDistVal]:
-    """Compute the distance between relevant subforests."""
+    """Compute the distance between relevant subforests.
+    
+    Parameters
+    ----------
+        i : int
+            The index, in post-order of the source subforest
+        j : int
+            The index, in post-order of the target tree subforest.
+        treedist_cache: Mapping
+            Cached values of the distance to previous subforests for 
+            the DP computation.
+    """
 
     empty = (-1, -1)  # store the empty tree has an invalid range
 
