@@ -1,4 +1,7 @@
 # treed
+Methods to compute the edit distance between (ordered)
+trees.
+
 
 [The Tree-to-tree correction problem, Kho-Chung Tai](https://dl.acm.org/doi/10.1145/322139.322143)
 
@@ -23,10 +26,7 @@ trees nodes in a postorder iteration;
 
 ```python
 def modify_node_cost_fn(
-    i: int, 
-    j: int,
-    t1: Tree,
-    t2: Tree
+    i: int, j: int, t1: Tree, t2: Tree
 ) -> int:
     """Cost incurred if we have to relabel"""
     n1 = t1.nodes[i]; n2 = t2.nodes[j]
@@ -34,8 +34,7 @@ def modify_node_cost_fn(
 
 tree_dist = tree_distance(
     t1, t2,
-    modify_node_cost_fn=modify_node_cost_fn,
-    return_mapping=True)
+    modify_node_cost_fn=modify_node_cost_fn)
     
 td = tree_dist[(len(t1.nodes)-1, len(t2nodes)-1)]
 ```
